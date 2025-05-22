@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>0522HW1</title>
+</head>
+<body>
+    <h2>我喜歡的飲料</h2>
+    <script>
+        let drinks = ['藍莓凍奶', '椰果奶茶', '巧克力牛奶', '鮮奶茶'];
+
+        document.write('<table border="1">');
+        for (let i = 0; i < drinks.length; i++) {
+            document.write('<tr><td>飲料' + (i + 1) + '</td>');
+            document.write('<td>' + drinks[i] + '</td></tr>');
+        }
+        document.write('</table>');
+    </script>
+</body>
+</html>

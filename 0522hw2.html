@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>0522HW2</title>
+</head>
+<body>
+    <script>
+        let name = ['王大同', '林麥可', '張淑芬'];
+        let grade = [
+            [85, 88, 77],
+            [99, 86, 89],
+            [75, 92, 86]
+        ];
+        document.write('<table border="1">');
+        document.write('<tr><td>姓名</td>');
+        document.write('<td>國文</td>');
+        document.write('<td>英文</td>');
+        document.write('<td>數學</td><tr>');
+        console.log(name.length);
+        for (let i = 0; i < name.length; i++) {
+            document.write('<tr><td>' + name[i] + '</td>');
+            for (let j = 0; j < name.length; j++)
+                document.write('<td>' + grade[i][j] + '</td>');
+        }
+        document.write('</tr></table>');
+    </script>
+</body>
+</html>
