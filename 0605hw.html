@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>購物車作業</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            background-color:antiquewhite;
+        }
+
+        img {
+            width: 270px;
+            height: 270px;
+        }
+
+        button {
+            width: 200px;
+            height: 70px;
+            font-size:20px;
+            margin:6px;
+        }
+        p{
+            font-size:40px;
+        }
+        .a {
+            align-content: center;
+            width: 200px;
+            height: 400px;
+            margin:10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="a">
+        <button id="price" onmouseover="over(this);" onmouseout="out(this);" >購物車總額</button>
+        <button onclick="clean(this);" onmouseover="over(this);" onmouseout="out(this);">清空購物車</button>
+    </div>
+    <br />
+    <div>
+        <img src="https://www.conti.com.tw/UploadFile/GoodPic/144315161610904_big.jpg" />
+        <p>$480</p>
+        <button onclick="adda(this);" onmouseover="over(this);" onmouseout="out(this);">加入購物車</button>
+    </div>
+    <br />
+    <div>
+        <img src="https://www.conti.com.tw/UploadFile/GoodPic/170010280829842_middle.jpg" />
+        <p>$600</p>
+        <button onclick="addb(this);" onmouseover="over(this);" onmouseout="out(this);">加入購物車</button>
+    </div>
+    <script>
+        let a = 480, b = 600;
+        let pr = Number(localStorage.getItem("prc")) || 0;
+        console.log(localStorage.getItem("prc"));
+        const bt = document.querySelector("#price");
+        console.log(bt.innerHTML);
+        bt.innerHTML = "購物車總額：" + pr;
+        function adda() {
+            pr = pr + a;
+            console.log(pr);
+            bt.innerHTML = "購物車總額：" + pr;
+            localStorage.setItem("prc", pr);
+        }
+        function addb() {
+            pr = pr + b;
+            console.log(pr);
+            bt.innerHTML = "購物車總額：" + pr;
+            localStorage.setItem("prc", pr);
+        }
+        function clean() {
+            pr = 0;
+            localStorage.setItem("prc", pr);
+            console.log(pr);
+            bt.innerHTML = "購物車總額：" + pr;
+        }
+        function over(elem) {
+            elem.style.fontWeight="bold"
+        }
+        function out(elem) {
+            elem.style.fontWeight = "normal"
+        }
+
+
+    </script>
+</body>
+</html>
